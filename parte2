@@ -1,0 +1,28 @@
+Unzip -o logs.zip -d logs_temp
+
+dia_mE=""
+MaxE=0
+
+for archivo in logs_temp/logs/*.log; do
+	fecha=$(basename "$archivo" .log)
+	errores=$(grep -c "ERROR" "$archivo")
+	warnings=$(grep -c "WARNING" "$archivo")
+	
+	echo "Fecha: $fecha"
+	echo "Errores: $errores"
+	echo "Warnings: $warnings"
+	
+	if [[ "$errores" -gt "$MaxE" ]]; then
+		MaxE="$errores"
+		dia_mE="$fecha"
+	fi
+done
+
+echo "Dia con más errores: $dia_mE"
+		
+		
+		
+		
+		
+		
+		

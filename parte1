@@ -1,0 +1,25 @@
+#1.Números de cpus
+cat /proc/cpuinfo | grep cpu | grep cores
+
+#2.total de memoria RAM
+cat /proc/meminfo | grep MemTotal
+
+#3.Espacio del disco
+lsblk | grep sda
+
+#4.Version de kernel
+hostnamectl | grep Kernel
+
+#5.Tiempo de actividad
+uptime
+
+6.Informacion del sistema operativo
+hostname | grep Operating | grep System
+
+7. Nombre del host del sistema
+hostnamectl | grep Static | grep hostname
+
+8.Uso de la memoria Swap
+cat /proc/meminfo | grep SwapTotal
+
+
